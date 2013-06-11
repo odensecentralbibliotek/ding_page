@@ -52,8 +52,8 @@ function ding_page_field_group_info() {
     'label' => 'Content',
     'weight' => '2',
     'children' => array(
-      0 => 'field_ding_page_lead',
-      1 => 'field_ding_page_body',
+      0 => 'field_ding_page_body',
+      1 => 'field_ding_page_lead',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

@@ -35,7 +35,7 @@ function ding_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_ding_page';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['comment_ding_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -97,13 +97,27 @@ function ding_page_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '-5',
+        ),
+        'redirect' => array(
+          'weight' => '30',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '30',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'webform' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__ding_page'] = $strongarm;
@@ -121,6 +135,10 @@ function ding_page_strongarm() {
   $strongarm->name = 'menu_options_ding_page';
   $strongarm->value = array(
     0 => 'main-menu',
+    1 => 'menu-footer-menu-2',
+    2 => 'menu-footer-menu-4',
+    3 => 'menu-footer-menu-3',
+    4 => 'menu-footer-menu-1',
   );
   $export['menu_options_ding_page'] = $strongarm;
 
@@ -144,14 +162,14 @@ function ding_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_ding_page';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_ding_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_ding_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_submitted_ding_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -165,14 +183,14 @@ function ding_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ding_page_en_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'page/[node:title]';
   $export['pathauto_node_ding_page_en_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ding_page_pattern';
-  $strongarm->value = 'page/[node:title]';
+  $strongarm->value = 'side/[node:title]';
   $export['pathauto_node_ding_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
